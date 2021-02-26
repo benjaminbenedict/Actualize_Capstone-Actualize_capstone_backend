@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Todo;
+
 User.create!({ name: "ben", email: "ben@test.com", password: "password", admin: true })
 User.create!({ name: "peter", email: "peter@test.com", password: "password" })
 User.create!({ name: "kevin", email: "kevin@test.com", password: "password" })
@@ -15,12 +18,18 @@ Plant.create!({scientific_name:"", common_name:"",plant_family:"", description:"
 Plant.create!({scientific_name:"", common_name:"",plant_family:"", description:"", light: "", temperature: "", humidity: "", water_freq: "",soil_type:"",difficulty_level:""})
 # Plant.create!({scientific_name:"", common_name:"",plant_family:"", description:"", light: "", temperature: "", humidity: "", water_freq: "",soil_type:"",difficulty_level:""})
 
-UserPlant.create!({user_id: ,plant_id: , date_aquired: (01,01.2021), last_watered: ,})
-UserPlant.create!({user_id: ,plant_id: , date_aquired: , last_watered: ,})
-UserPlant.create!({user_id: ,plant_id: , date_aquired: , last_watered: ,})
-UserPlant.create!({user_id: ,plant_id: , date_aquired: , last_watered: ,})
-UserPlant.create!({user_id: ,plant_id: , date_aquired: , last_watered: ,})
-# UserPlant.create!({user_id: ,plant_id: , date_aquired: , last_watered: ,})
+UserPlant.create!({user_id: ,plant_id: , date_aquired: DateTime.new(2020,2,3)})
+UserPlant.create!({user_id: ,plant_id: , date_aquired: DateTime.new(2021,2,3)})
+UserPlant.create!({user_id: ,plant_id: , date_aquired: DateTime.new(2021,2,3)})
+UserPlant.create!({user_id: ,plant_id: , date_aquired: DateTime.new(2021,2,3)})
+UserPlant.create!({user_id: ,plant_id: , date_aquired: DateTime.new(2021,2,3)})
+# UserPlant.create!({user_id: ,plant_id: , date_aquired: ,})
+
+Location.create!({name: "",description: ""})
+
+Location_user_plant.create!({user_plant_id: , location_id: , date: DateTime.new(2020,2,3)})
+
+
 
 Rating.create!({user_id: , plant_id: , liked: ,})
 Rating.create!({user_id: , plant_id: , liked: ,})
@@ -35,3 +44,4 @@ Picture.create!({plant_id: , user_id: , img_url: "",})
 Picture.create!({plant_id: , user_id: , img_url: "",})
 Picture.create!({plant_id: , user_id: , img_url: "",})
 # Picture.create!({plant_id: , user_id: , img_url: "",})
+

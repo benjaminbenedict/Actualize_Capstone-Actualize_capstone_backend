@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_19_015015) do
+ActiveRecord::Schema.define(version: 2021_02_26_024559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "location_user_plants", force: :cascade do |t|
+    t.integer "user_plant_id"
+    t.integer "location_id"
+    t.date "date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "pictures", force: :cascade do |t|
     t.integer "plant_id"
@@ -50,7 +65,6 @@ ActiveRecord::Schema.define(version: 2021_02_19_015015) do
     t.integer "user_id"
     t.integer "plant_id"
     t.date "date_aquired"
-    t.date "last_watered"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -60,6 +74,13 @@ ActiveRecord::Schema.define(version: 2021_02_19_015015) do
     t.string "email"
     t.string "password_digest"
     t.boolean "admin"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "waterings", force: :cascade do |t|
+    t.integer "user_plant_id"
+    t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -4,7 +4,6 @@ class CreateUserPlants < ActiveRecord::Migration[6.0]
       t.integer :user_id
       t.integer :plant_id
       t.date :date_aquired
-      t.date :last_watered
 
       t.timestamps
     end
