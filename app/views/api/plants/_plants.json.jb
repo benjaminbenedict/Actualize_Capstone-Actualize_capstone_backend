@@ -1,0 +1,16 @@
+{
+  id: plant.id,
+  scientific_name: plant.scientific_name,
+  common_name: plant.common_name,
+  plant_family: plant.plant_family,
+  # images: plant.images,
+  # is_admin: current_user && current_user.admin,
+  # primary_image_url: plant.primary_image_url,
+  description: plant.description,
+  light: plant.light,
+  temperature: plant.temperature,
+  humidity: plant.humidity,
+  water_freq: plant.water_freq,
+  soil_type: plant.soil_type,
+  difficulty_level: plant.difficulty_level,
+}
