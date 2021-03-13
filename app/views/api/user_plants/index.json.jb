@@ -1,0 +1,3 @@
+@user_plants.map do |user_plant|
+  render partial: "user_plant.json.jb", locals: { user_plant: user_plant }
+end

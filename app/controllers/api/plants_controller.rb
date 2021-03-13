@@ -14,10 +14,16 @@ class Api::PlantsController < ApplicationController
 
   def create
     @plant = Plant.new(
-      name: params["name"],
-      price: params["price"],
+      scientific_name: params["scientific_name"],
+      common_name: params["common_name"],
+      plant_family: params["plant_family"],
       description: params["description"],
-      supplier_id: params["supplier_id"],
+      light: params["light"],
+      temperature: params["temperature"],
+      humidity: params["humidity"],
+      water_freq: params["water_freq"],
+      soil_type: params["soil_type"],
+      difficulty_level: params["difficulty_level"],
     )
     @plant.save
     render "show.json.jb"
@@ -28,5 +34,30 @@ class Api::PlantsController < ApplicationController
     # else
     #   render json: { errors: @plant.errors.full_messages }, status: 422
     # end
+  end
+
+  def update
+    @plant = Plant.find_by(id: params["id"])
+    @plant.scientific_name = params["scientific_name"] || @plant.scientific_name
+    @plant.common_name = params["common_name"] || @plant.common_name
+    @plant.plant_family = params["plant_family"] || @plant.plant_family
+    @plant.description = params["description"] || @plant.description
+    @plant.light = params["light"] || @plant.light
+    @plant.temperature = params["temperature"] || @plant.temperature
+    @plant.humidity = params["humidity"] || @plant.humidity
+    @plant.water_freq = params["water_freq"] || @plant.water_freq
+    @plant.soil_type = params["soil_type"] || @plant.soil_type
+    @plant.difficulty_level = params["difficulty_level"] || @plant.difficulty_level
+    if @plant.save
+      render "show.json.jb"
+    else
+      render json: { errors: @plant.errors.full_messages }, status: 422
+    end
+  end
+
+  def destroy
+    plant = Plant.find_by(id: params["id"])
+    plant.destroy
+    render json: { message: "Plant Incinerated" }
   end
 end
