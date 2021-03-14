@@ -3,7 +3,7 @@
   scientific_name: plant.scientific_name,
   common_name: plant.common_name,
   plant_family: plant.plant_family,
-  # images: plant.images,
+  images: plant.pictures,
   # is_admin: current_user && current_user.admin,
   # primary_image_url: plant.primary_image_url,
   description: plant.description,
