@@ -1,0 +1,5 @@
+{
+  id: watering.id,
+  user_plant_id: watering.user_plant_id,
+  date: watering.date,
+}

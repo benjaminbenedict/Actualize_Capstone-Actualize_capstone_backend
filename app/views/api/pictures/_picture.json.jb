@@ -1,0 +1,6 @@
+{
+  id: picture.id,
+  plant_id: picture.plant_id,
+  user_id: picture.user_id,
+  img_url: picture.img_url,
+}

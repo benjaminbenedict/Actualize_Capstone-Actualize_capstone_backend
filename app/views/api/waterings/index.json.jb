@@ -1,0 +1,3 @@
+@waterings.map do |watering|
+  render partial: "watering.json.jb", locals: { watering: watering }
+end
