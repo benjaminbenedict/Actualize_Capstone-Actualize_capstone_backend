@@ -1,6 +1,7 @@
 {
   id: user_plant.id,
   user_id: user_plant.user_id,
-  plant_id: user_plant.plant_id,
+  plant_id: user_plant.plant,
+  waterings: user_plant.waterings,
   date_aquired: user_plant.date_aquired,
 }
