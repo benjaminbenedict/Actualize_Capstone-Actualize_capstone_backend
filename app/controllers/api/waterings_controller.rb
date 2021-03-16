@@ -13,7 +13,7 @@ class Api::WateringsController < ApplicationController
 
   def create
     @watering = Watering.new(
-      user_plant_id: params[user_plant_id],
+      user_plant_id: params["user_plant_id"],
       date: params["date"],
     )
     @watering.save

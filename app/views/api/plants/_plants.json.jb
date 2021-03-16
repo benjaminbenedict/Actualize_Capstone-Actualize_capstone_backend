@@ -5,7 +5,7 @@
   plant_family: plant.plant_family,
   images: plant.pictures,
   # is_admin: current_user && current_user.admin,
-  # primary_image_url: plant.primary_image_url,
+  primary_image_url: plant.primary_image_url,
   description: plant.description,
   light: plant.light,
   temperature: plant.temperature,
