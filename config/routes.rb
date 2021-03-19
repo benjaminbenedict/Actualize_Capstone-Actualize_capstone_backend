@@ -41,5 +41,6 @@ Rails.application.routes.draw do
     post "/pictures" => "pictures#create"
 
     get "/usda" => "usda#index"
+    get "/calander" => "calander#index"
   end
 end
