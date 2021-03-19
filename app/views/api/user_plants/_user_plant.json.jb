@@ -5,5 +5,6 @@
   primary_image_url: user_plant.plant.primary_image_url,
   user_images: current_user.pictures,
   waterings: user_plant.waterings,
+  most_recent_watering: user_plant.waterings.map { |h| h[:date] }.max,
   date_aquired: user_plant.date_aquired,
 }
