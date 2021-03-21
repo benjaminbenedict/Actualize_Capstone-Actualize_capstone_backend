@@ -5,6 +5,8 @@
   primary_image_url: user_plant.plant.primary_image_url,
   user_images: current_user.pictures.where(plant_id: user_plant.plant_id),
   waterings: user_plant.waterings,
-  most_recent_watering: user_plant.waterings.map { |h| h[:date] }.max,
+  most_recent_watering: user_plant.last_watered,
   date_aquired: user_plant.date_aquired,
+  next_wattering: user_plant.next_wattering,
+  needs_water: user_plant.needs_water,
 }

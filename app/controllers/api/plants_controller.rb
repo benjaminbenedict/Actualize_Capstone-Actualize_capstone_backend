@@ -27,6 +27,14 @@ class Api::PlantsController < ApplicationController
     )
     @plant.save
     render "show.json.jb"
+    # if @plant.save
+    #   response = Cloudinary::Uploader.upload(params[:image], resource_type: :auto)
+    #   cloudinary_url = response["secure_url"]
+    #   Picture.create(img_url: cloudinary_url, plant_id: @plant.id, user_id: current_user.id)
+    #   render "show.json.jb"
+    # else
+    #   render json: { errors: @plant.errors.full_messages }, status: 422
+    # end
 
     # if @plant.save
     #   Image.create(plant_id: @plant.id, url: params[:image_url])
