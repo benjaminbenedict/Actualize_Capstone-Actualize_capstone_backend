@@ -54,6 +54,7 @@ class UserPlant < ApplicationRecord
       @wl
     end
     water_f = (next_wattering - last_watered).to_i
+
     @wl = (days_since_last_watered / water_f.to_f)
 
     @wl = (1 - @wl) * 100
