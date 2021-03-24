@@ -8,9 +8,9 @@
 
 # Todo;
 
-user1 = User.create!({ name: "ben", email: "ben@test.com", password: "password", admin: true })
-user2 = User.create!({ name: "peter", email: "peter@test.com", password: "password" })
-user3 = User.create!({ name: "kevin", email: "kevin@test.com", password: "password" })
+user1 = User.create!({ name: "ben", email: "ben@test.com", user_photo: "https://res.cloudinary.com/benlovesplants89/image/upload/v1616458245/Plant_Track/ben_zmpxmk.jpg", password: "password", admin: true })
+user2 = User.create!({ name: "peter", email: "peter@test.com", user_photo: "https://res.cloudinary.com/benlovesplants89/image/upload/v1616442942/Plant_Track/peter_kor89f.jpg", password: "password" })
+user3 = User.create!({ name: "kevin", email: "kevin@test.com", user_photo: "https://res.cloudinary.com/benlovesplants89/image/upload/v1616442942/Plant_Track/kevin_eqrmm5.jpg", password: "password" })
 
 plant1 = Plant.create!({ scientific_name: "P. erubescens", common_name: "Pink Princess Philodendron", plant_family: "Philodendron", description: "Black-leaf philodendron with hot pink variegation.", light: "High", temperature: "65-85", humidity: "High", water_freq: "Low", soil_type: "Ariod", difficulty_level: "Medium" })
 plant2 = Plant.create!({ scientific_name: "scindapsus treubii", common_name: "scindapsus treubii", plant_family: "Scindapsus", description: "These plants have a smooth stem and oval or heart-shaped leaves of green color with hints of silver. This is where the name “Scindapsus Moonlight” comes from.  These leaves can grow as long as 12 to 60 centimeters and are the primary attraction of the plant with their beautiful, satin finish. The leaves grow to their full potential if given strong, rigid support such as a stalk or a bamboo stick.", light: "Medium", temperature: "60-90", humidity: "Medium", water_freq: "Low", soil_type: "Indoor Plant", difficulty_level: "Easy" })
@@ -41,7 +41,7 @@ user_plant2 = UserPlant.create!({ user_id: user2.id, plant_id: plant1.id, date_a
 user_plant3 = UserPlant.create!({ user_id: user2.id, plant_id: plant10.id, date_aquired: DateTime.new(2021, 2, 10) })
 user_plant4 = UserPlant.create!({ user_id: user3.id, plant_id: plant3.id, date_aquired: DateTime.new(2020, 2, 3) })
 user_plant5 = UserPlant.create!({ user_id: user2.id, plant_id: plant1.id, date_aquired: DateTime.new(2021, 1, 22) })
-user_plant6 = UserPlant.create!({ user_id: user2.id, plant_id: plant1.id, date_aquired: DateTime.new(2021, 1, 8) })
+user_plant6 = UserPlant.create!({ user_id: user2.id, plant_id: plant19.id, date_aquired: DateTime.new(2021, 1, 8) })
 user_plant7 = UserPlant.create!({ user_id: user3.id, plant_id: plant14.id, date_aquired: DateTime.new(2020, 8, 3) })
 user_plant8 = UserPlant.create!({ user_id: user3.id, plant_id: plant14.id, date_aquired: DateTime.new(2020, 5, 9) })
 user_plant9 = UserPlant.create!({ user_id: user1.id, plant_id: plant20.id, date_aquired: DateTime.new(2019, 2, 12) })
@@ -50,7 +50,9 @@ user_plant11 = UserPlant.create!({ user_id: user2.id, plant_id: plant14.id, date
 user_plant12 = UserPlant.create!({ user_id: user2.id, plant_id: plant3.id, date_aquired: DateTime.new(2020, 10, 31) })
 user_plant13 = UserPlant.create!({ user_id: user2.id, plant_id: plant2.id, date_aquired: DateTime.new(2020, 8, 1) })
 user_plant14 = UserPlant.create!({ user_id: user2.id, plant_id: plant1.id, date_aquired: DateTime.new(2020, 6, 20) })
-user_plant15 = UserPlant.create!({ user_id: user2.id, plant_id: plant1.id, date_aquired: DateTime.new(2020, 11, 13) })
+user_plant15 = UserPlant.create!({ user_id: user2.id, plant_id: plant12.id, date_aquired: DateTime.new(2020, 11, 13) })
+user_plant16 = UserPlant.create!({ user_id: user2.id, plant_id: plant17.id, date_aquired: DateTime.new(2021, 1, 13) })
+user_plant17 = UserPlant.create!({ user_id: user2.id, plant_id: plant13.id, date_aquired: DateTime.new(2021, 3, 5) })
 # user_plant11 = UserPlant.create!({user_id: user1.id,plant_id: plant1.id, date_aquired: ,})
 
 Watering.create!({ user_plant_id: user_plant1.id, date: DateTime.new(2021, 2, 3) })
@@ -71,9 +73,14 @@ Watering.create!({ user_plant_id: user_plant13.id, date: DateTime.new(2020, 12, 
 Watering.create!({ user_plant_id: user_plant14.id, date: DateTime.new(2021, 2, 25) })
 Watering.create!({ user_plant_id: user_plant15.id, date: DateTime.new(2021, 1, 13) })
 Watering.create!({ user_plant_id: user_plant12.id, date: DateTime.new(2021, 3, 1) })
-Watering.create!({ user_plant_id: user_plant2.id, date: DateTime.new(2020, 6, 5) })
+Watering.create!({ user_plant_id: user_plant2.id, date: DateTime.new(2021, 2, 5) })
 Watering.create!({ user_plant_id: user_plant12.id, date: DateTime.new(2021, 3, 5) })
-Watering.create!({ user_plant_id: user_plant2.id, date: DateTime.new(2020, 7, 5) })
+Watering.create!({ user_plant_id: user_plant2.id, date: DateTime.new(2021, 2, 20) })
+Watering.create!({ user_plant_id: user_plant12.id, date: DateTime.new(2020, 7, 5) })
+Watering.create!({ user_plant_id: user_plant2.id, date: DateTime.new(2021, 3, 1) })
+Watering.create!({ user_plant_id: user_plant16.id, date: DateTime.new(2021, 3, 15) })
+Watering.create!({ user_plant_id: user_plant17.id, date: DateTime.new(2021, 3, 10) })
+Watering.create!({ user_plant_id: user_plant11.id, date: DateTime.new(2021, 3, 18) })
 
 location1 = Location.create!({ name: "Living Room", description: "High Light Low Humidity" })
 location2 = Location.create!({ name: "Bedroom1", description: "Low Light Low Humidity" })

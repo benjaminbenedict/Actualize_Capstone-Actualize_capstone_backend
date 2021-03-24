@@ -13,4 +13,6 @@
   water_freq: plant.water_freq,
   soil_type: plant.soil_type,
   difficulty_level: plant.difficulty_level,
+  user_profiles: plant.user_profiles,
+
 }

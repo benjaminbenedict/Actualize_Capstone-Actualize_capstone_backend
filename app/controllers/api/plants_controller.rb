@@ -26,6 +26,16 @@ class Api::PlantsController < ApplicationController
       difficulty_level: params["difficulty_level"],
     )
     @plant.save
+    if params[:image]
+      response = Cloudinary::Uploader.upload(params[:image], resource_type: :auto)
+      cloudinary_url = response["secure_url"]
+      @picture = Picture.new(
+        img_url: cloudinary_url,
+        plant_id: @plant.id,
+        user_id: current_user.id,
+      )
+      @picture.save
+    end
     render "show.json.jb"
     # if @plant.save
     #   response = Cloudinary::Uploader.upload(params[:image], resource_type: :auto)
